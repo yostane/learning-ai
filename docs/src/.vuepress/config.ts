@@ -16,7 +16,7 @@ export default defineUserConfig({
       "link",
       { rel: "manifest", href: "/learning-ai/manifest.webmanifest" },
     ],
-    ["meta", { name: "theme-color", content: "#027DFD" }],
+    ["meta", { name: "theme-color", content: "#00A67E" }],
   ],
 
   theme: defaultTheme({
