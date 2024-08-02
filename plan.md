@@ -14,27 +14,29 @@ Découvrir le Machine Learning v4.pptx
 
 1. Je consomme du prompt
 
-  Librechat Agent/Plugin , pre prompt , raccourcis , MM-LLMs Dallee ... 
-  Prompt engineering ( summary, roles  ... )
-  RAG level 1: LibreChat --> pose pdf , bibliotheque , (windows, token )
-  LM Studio interface graphique avec GUI + curl  ,  
+  a. Librechat : decrouvrir les Agents/Plugin , les pre prompt ,les raccourcis en / ,l'utilisation MM-LLMs avec dallee notamment ... 
+  b. Prompt engineering ( résumé des phrase clefs,de proposer un role au LLM  ... )
+  c. RAG level 1: LibreChat --> pose pdf ,creation d'une bibliotheque , (windows, token )
+  d. decouverte de LM Studio (interface graphique avec GUI et utilisation avec curl )
 
 
-2. interrragie avec une api  et je consomme cette API ( python based) chez Worldline
+2. interrragir avec une api LLM et  consommer cette API chez Worldline
 
-  Github copilot completion to help to code with python 
-  Copilot/ IDE  : generration des tests , assistance , generation de la doc , comprehension et gen de diagrammes archi
-  Remote :Azure/Gemini API OpenAI --> curl + puis client python  (via	 Stephan Pirson, MS --> Data Platform. https://worldline365.sharepoint.com/_forms/.     spfxsinglesignon.aspx.  <--- un proxy IA pour switcher de manière transparante entre les modèles )
-  RAG level 2: llama-index / Langchain so on veut faire du JAVA)
-  Function calling / Json Mode --> Demo Jean François
-  Local : (Ollama CLI)
+  a. Utilisation de Github copilot pour l'aide a developpement python
+  b. Copilot dans les IDE  ( aide a la generration des tests , refactoring, assistance , generation de la doc , comprehension et genération de diagrammes d'architecture)
+  c. Utilisation de LLM distants : Azure/Gemini API OpenAI avec curl + puis client python  
+  (via	 Stephan Pirson, MS --> Data Platform. https://worldline365.sharepoint.com/_forms/.     spfxsinglesignon.aspx.  <--- un proxy IA pour switcher de manière transparante entre les modèles )
+  d. RAG level 2: utilisation de llama-index () Langchain4j so on veut faire du JAVA)
+  c. Function calling / Json Mode --> cf Demo Jean François
+  d. Utilisation en local  (Ollama CLI)
 
-3. Créer,deployer,customiser un modèle  (cloud , locale , ) ( contexte : la GenAI générique ne résout pas tous les problèmes nécessité de customiser le modèle)
+3. Créer,deployer,customiser un modèle  (cloud , locale)
 
-	Hugging Face <-- Modèle préentrainé, utiliser derriere les API ,(partie ML , entrainement generation modèle utilisation)
-     Vertex AI : suite IA GCP . Gemini : modèle de language + google collab , ML flow 
-     Découverte du prototypage notebook --> cen 'est pas le format final de developpeme,t embarqués
+a. 	Hugging Face ( Modèle préentrainé, utiliser derriere les API , m  is aussi une partie ML , entrainement generation modèle pour utilisation)
+b. AI dans GCP : Vertex AI / Gemini  ( modèle de language, google collab , ML flow )
+c. Découverte du prototypage avec Jupyter notebook (ce n'est pas le format final de developpement embarqué)
 
+( contexte : la GenAI générique ne résout pas tous les problèmes nécessité de customiser le modèle)
 
 LM studio --> attention Zscaler 
 

@@ -10,7 +10,7 @@
   ],
   "repository": "https://github.com/gbrah/learning-flutter",
   "scripts": {
-    "dev": "vuepress dev src",
+    "dev": "vuepress dev src -p 8081 --debug",
     "build": "vuepress build src"
   },
   "license": "MIT",

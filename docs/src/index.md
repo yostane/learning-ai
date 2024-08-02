@@ -8,13 +8,20 @@ actions:
     link: /overview/
     type: primary
 features:
-  - title: 1. Introduction
-    details:  AI for Devs ? - History - Architecture
-  
+  - title: Let's start
+    details:  Prerequisites - Definitions - A bit of History - The market
+  - title: Using AI
+    details: Prompt engineering - LibreChat quickstart - Offline prompting
+  - title: Consume APIs
+    details:  Github Copilot - Cloud LLMs - Advanced RAG
 footer: Worldline © 2024 | tech at Worldline
 ---
+::: warning Disclamer
+ LLMs and MMLLMs are constantly evolving, and new applications for developer training are emerging all the time.
+ :::
 
 # AI for devs | Tech at Worldline
+
 ## Who we are 
 
 ![avatar](./assets/images/logo_worldline.png)  

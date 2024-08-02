@@ -24,7 +24,10 @@ export default defineUserConfig({
 
         sidebar: [
           { text: 'Home', link: '/' },
-          "/overview/"
+          "/overview/",
+          "/use/",
+          "/consume/",
+          "/models/"
         ], 
   }),
 
