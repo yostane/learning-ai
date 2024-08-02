@@ -1,5 +1,4 @@
 # Let's start 
-
 ::: warning
  LLMs and MMLLMs are constantly evolving, and new applications for developer training are emerging all the time.
  :::
@@ -97,9 +96,7 @@ During the turing test, the human questioner asks a series of questions to both 
 * **2022:** First release of ChatGPT : AI continues to evolve rapidly, with advancements in areas like autonomous vehicles, robotics, and personalized medicine.
 
  ## The market
-
  ![market](../assets/images/market.png)
-
 
  ## 📖 Further readings
  * [Generative AI Taskforce email](mailto:GenAITaskforce@worldline.com)
