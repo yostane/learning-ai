@@ -98,6 +98,9 @@ During the turing test, the human questioner asks a series of questions to both 
  ## The market
  ![market](../assets/images/market.png)
 
+ ![top50](../assets/images/top50.png)
+
  ## 📖 Further readings
  * [Generative AI Taskforce email](mailto:GenAITaskforce@worldline.com)
+ * [Top 100 GenAI](https://a16z.com/100-gen-ai-apps/)
 

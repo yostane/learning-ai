@@ -44,7 +44,11 @@ LM studio --> attention Zscaler
     Yassine K et Cyril 
     Fanilo  
     Johanne  + Valentine 
-    Stéphane  
+    Stéphane P.
     Julien Carme
     Efan et Matt
+    Lioune
+    Julien Theruelle 
+    Stéphane Verv
+    
  
