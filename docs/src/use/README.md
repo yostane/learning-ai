@@ -1,4 +1,4 @@
-# Using AI
+#  General assistants
 
 ## Prompt engineering
 Prompt engineering involves the design and creation of prompts that are used to elicit specific responses or actions from AI models or interactive systems. These prompts are carefully crafted to guide the behavior or generate particular outputs from the AI, such as generating natural language responses, providing recommendations, or completing specific tasks.

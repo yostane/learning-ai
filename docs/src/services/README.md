@@ -1,4 +1,4 @@
-#  Create services 
+#  AI for services 
 
 ## Hugging Face
 - Creating/deploy/customize a model
