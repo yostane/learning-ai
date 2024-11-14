@@ -16,6 +16,8 @@ Understanding of cloud computing principles, including basic concepts of cloud i
 
 ::: warning 
 Additionnaly, **Request Worldline librechat access:** send a mail at  [Generative AI Taskforce email](mailto:GenAITaskforce@worldline.com)
+
+There is a dedicated sharepoint for basic general assistant quick start at Worldline : [LibreChat Worldline guides](https://worldline365.sharepoint.com/:u:/r/sites/GenerativeAIQA/SitePages/LibreChat-guides.aspx?csf=1&web=1&e=evKJpU)
 :::
 
 ## Definitions 

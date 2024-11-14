@@ -10,10 +10,12 @@ actions:
 features:
   - title: Let's start
     details:  Prerequisites - Definitions - A bit of History - The market
-  - title: Using AI
+  - title: General assistants
     details: Prompt engineering - LibreChat quickstart - Offline prompting
-  - title: Consume APIs
-    details:  Github Copilot - Cloud LLMs - Advanced RAG
+  - title: Develop with AI
+    details:  Github Copilot
+  - title: AI for services
+    details: Cloud LLMs - Advanced RAG
 footer: Worldline © 2024 | tech at Worldline
 ---
 ::: warning Disclamer

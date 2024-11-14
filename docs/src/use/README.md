@@ -99,6 +99,39 @@ For best use, be selective with plugins per message and narrow your requests as 
 #### DALL-E 3
 #### MyWLContentQA
 
+
+### Code generation
+```
+Act as a code generator. Generate a Python function that takes a list of numbers as input and returns the sum of all the numbers.
+```
+
+### Code completion
+
+
+###  Code conversion
+
+
+### Code review
+
+
+### Scoped code refactor
+
+### Bug detection and fixing
+
+### Mock data generation
+
+### Testing
+
+### System design and architecture
+
+### Documentation generation
+
+
+### Shell commands
+
+### Regular expression
+
+
 ## RAG basics
 
 ## Offline prompting 
