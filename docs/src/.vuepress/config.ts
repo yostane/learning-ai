@@ -2,8 +2,9 @@ import { defaultTheme } from "@vuepress/theme-default";
 import { searchPlugin } from "@vuepress/plugin-search";
 import { nprogressPlugin } from "@vuepress/plugin-nprogress";
 import { pwaPlugin } from "@vuepress/plugin-pwa";
-import { seoPlugin } from "vuepress-plugin-seo2";
+import { seoPlugin } from "@vuepress/plugin-seo";
 import { defineUserConfig } from "vuepress";
+import { viteBundler } from '@vuepress/bundler-vite'
 
 export default defineUserConfig({
   
@@ -29,6 +30,10 @@ export default defineUserConfig({
           "/develop/",
           "/services/"
         ], 
+  }),
+  bundler: viteBundler({
+    viteOptions: {},
+    vuePluginOptions: {},
   }),
 
   plugins: [

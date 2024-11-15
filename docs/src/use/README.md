@@ -62,6 +62,16 @@ LibreChat is a free, open source AI chat platform. This Web UI offers vast custo
 ### Presets
 The “presets” feature in our app is a powerful tool that allows users to save and load predefined settings for their conversations. Users can import and export these presets as JSON files, set a default preset, and share them with others on Discord.
 
+### Prompts
+
+The prompts feature in our app is a powerful tool that allows users to save and load predefined prompts for their conversations.
+You can use a prompt with the /prompt command. A prompt can have parameters, which are replaced with values when the prompt is used.
+
+
+
+Prompts  creation is available at the right sidebar. You can create a new prompt, edit an existing prompt, or delete a prompt.
+
+
 ### AI providers 
 
 #### Azure OpenAI
@@ -99,22 +109,23 @@ For best use, be selective with plugins per message and narrow your requests as 
 #### DALL-E 3
 #### MyWLContentQA
 
+###  Developers prompts
 
-### Code generation
+#### Code generation
 ```
 Act as a code generator. Generate a Python function that takes a list of numbers as input and returns the sum of all the numbers.
 ```
 
-### Code completion
+#### Code completion
 
 
-###  Code conversion
+####  Code conversion
 
 
-### Code review
+#### Code review
 
 
-### Scoped code refactor
+#### Scoped code refactor
 
 ### Bug detection and fixing
 
