@@ -22,27 +22,27 @@ There is a dedicated sharepoint for basic general assistant quick start at World
 
 ## Definitions 
 
-### LLM 
+### Large Language Model (LLM) 
 Large Language Model is a powerful type of AI model trained on massive datasets of text and code. LLMs can understand, generate, and manipulate language.
 Ex : ChatGPT, Bard, Codex
 
 *What are Large Language Models (LLMs)? by Google for developpers*
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iR2O2GPbB0E" title="What are Large Language Models (LLMs)? by Google for developpers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### MMLLM
+### Multi-Modal LLM (MMLLM)
 Multi-Modal Large Language Model is an advanced LLM that can process and generate both text and other data formats like images, audio, or video. 
 Ex:  DALL-E 2, Stable Diffusion (for image generation)
 
-### ML
+### Machine Learning (ML)
 Machine Learning is a subset of AI that focuses on training algorithms to learn from data and make predictions or decisions without explicit programming. ML powers many AI applications, including image recognition, natural language processing, and predictive analytics. 
 
-### DL
+### Deep Learning (DL)
 Deep Learning is a type of ML that uses artificial neural networks with multiple layers to learn complex patterns from data.DL has revolutionized fields like computer vision, speech recognition, and machine translation. 
 
 ### Neural Network
 A computational model inspired by the structure of the human brain, consisting of interconnected nodes (neurons) organized in layers.Neural networks are the core building blocks of deep learning models. 
 
-#### NLP
+#### Natural Language Processing (NLP)
 Natural Language Processing is a branch of Artificial Intelligence (AI) that focuses on enabling computers to understand, interpret, and generate human language. It implies : 
 - Text Analysis
 - Language Understanding
