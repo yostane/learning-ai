@@ -27,6 +27,8 @@ export default defineUserConfig({
           { text: 'Home', link: '/' },
           "/overview/",
           "/use/",
+          "/llm/",
+          "/offline/",
           "/develop/",
           "/services/"
         ], 
