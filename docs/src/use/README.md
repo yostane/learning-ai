@@ -1,4 +1,6 @@
-#  General assistants
+#  Librechat
+
+The full documentation is available [here](https://www.librechat.ai/docs)
 
 ## Prompt engineering
 Prompt engineering involves the design and creation of prompts that are used to elicit specific responses or actions from AI models or interactive systems. These prompts are carefully crafted to guide the behavior or generate particular outputs from the AI, such as generating natural language responses, providing recommendations, or completing specific tasks.
@@ -15,7 +17,6 @@ There are four main areas to consider when writing an effective prompt. You don�
 - `Format`: What is the desired output of the task?
 
 **Example Prompt:**
-
 * [`Persona`] You are a Google Cloud program manager. 
 * [`Task`] Draft an executive summary email
 * [`Context`] to [person description] based on [details about relevant program docs]. 
@@ -51,7 +52,7 @@ Create a guide that explains how to use ….
 Write step by step instructions
 ```
 
-## LibreChat Interface
+## Interface
 ![librechat_interface](../assets/images/librechat_interface.png)
 
 LibreChat is a free, open source AI chat platform. This Web UI offers vast customization, supporting numerous AI providers, services, and integrations. Serves all AI Conversations in one place with a familiar interface, innovative enhancements, for as many users as you need.
@@ -116,11 +117,11 @@ Code review is a prompt engineering technique that involves providing a code rev
 
 Code fixing is a prompt engineering technique that involves providing a code fix for a given code snippet or function. This technique is useful for developers who want to fix bugs or issues in their code or for those who want to improve the quality of their code.
 
-### Scoped refactoring
+### Refactoring
 
-Scoped code refactor is a prompt engineering technique that involves providing a code refactoring of a given code snippet or function within a specific scope. This technique is useful for developers who want to refactor their code within a specific context or for those who want to improve the readability and maintainability of their code.
+Code refactor is a prompt engineering technique that involves providing a code refactoring of a given code snippet or function within a specific scope. This technique is useful for developers who want to refactor their code within a specific context or for those who want to improve the readability and maintainability of their code.
 
-### Data mock  
+### Data mocking  
 
 Mock data generation is a prompt engineering technique that involves providing a mock data set for a given code snippet or function. This technique is useful for developers who want to test their code with mock data or for those who want to generate test data for their projects. It avoid creating manually fake data for testing.
 
@@ -147,11 +148,22 @@ As a developer, you’re not limited to only writing code. LLMs can assist with 
 
 You can understand complex regular expressions and generate ones that match specific patterns in text. This technique is useful for developers who want to write complex regular expressions or for those who want to understand the syntax of regular expressions.
 
-Example: Explain this regular expression in JavaScript: const regex = /^[A-Za-z0–9._%+-]+@[A-Za-z0–9.-]+\\.[A-Za-z]{2,}$/;
+```
+Explain this regular expression in JavaScript: const regex = 
+/^[A-Za-z0–9._%+-]+@[A-Za-z0–9.-]+\\.[A-Za-z]{2,}$/;
+```
 
 ## 🧪 Exercises
 
+### Try to make a request respecting Persona, Task and Context, and format structure
+
+### Prompt creation
+
 Select one prompt engineering technique and make a prompt in librechat that can be called with the `/[prompt_name]` command.
+
+### Plugins mixing
+
+Use the Browse and Dall-E plugins to create a prompt that generates a technical diagram based on the content of this learning-ai website
 
 
 ## AI providers 
@@ -186,23 +198,75 @@ Every additional plugin selected will increase your token usage as there are det
 For best use, be selective with plugins per message and narrow your requests as much as possible
 :::
 
-### Ask Wolf
-### Ask Confluence
 ### DALL-E 3
-### MyWLContentQA
 
+Dall-e 3 is a librechat Plugin for generating images from text. You can use it to generate images from text, such as product descriptions, product images, or even documentation images to illustrate your technical documentation.
+
+
+### Confluence
+
+Ask confluence is a librechat Plugin for Confluence documents.
+
+### IT support
+
+Ask for IT support enable you to get support from the IT team and create WLSD tickets from your chats.
+
+
+### WOLF
+
+`Wolf` is a librechat Plugin for WL Managagement System documents. 
+The sharepoint documention is available [here](https://worldline365.sharepoint.com/sites/AAC815)
+
+Ask to WorldLine management system Friend everything you are looking for in the WMS content. 
+AskWOLF plugin is meant to help you navigate through the multitude of information provided by the WMS (Applicable Policies, Processes & Procedures, Transversal & Operations SP pages links, …). This Worldline LibreChat plugin relies on ChatGPT technologies.
+
+​​​​​​​Worldline Management System (WMS) is the Group reference for all information pertaining to our operating model such as applicable policies, processes and governance structures.
+Key responsibilities are :
+- consistently address its customers’ and markets’ requirements across all its geographies
+- continuous improvement of customer satisfaction through effective application of WMS
+- correct interpretation of applicable ISO standards requirements
+
+Example of prompts:
+- AskWOLF: What is the WMS?
+- AskWOLF: What are the policies?
+- AskWOLF: What are the processes?
+
+### Browse plugins
+
+Retrieve data from internet and use it to generate a response.
+
+### Plugin mixing
+You can mix plugins to create more complex prompts. For example, you can use the DALL-E 3 plugin to generate images from text and then use the IT support plugin to get support from the IT team.
+
+```
+Generate the favicon 16x16 pixels based on the content found in 
+https://worldline.github.io/learning-ai/overview/ with Browser plugin 
+and generate the favicon with DallE. I want no background and black and 
+white style image
+```
+![prompt](../assets/images/multi_plugin.png)
+![Favicon](../assets/images/result_prompt.png)
 
 ## RAG
 
-## Offline prompting 
+RAG is possible with LIbrechat. You can use RAG to create a conversation with the AI.
+To can add files to the conversation, you go to the file tab and select the file you want to add. Then the file will be added to the file manager and you can use it in the prompt.
+
+The file can be an png, a video, a text file, or a PDF file.
+
+## Offline prompting with LM Studio
 
 ### Definition
 
 If you don't want to use the online AI providers, you can use offline prompting. This technique involves using a local LLM to generate responses to prompts. It is useful for developers who want to use a local LLM for offline prompting or for those who want to experiment with different LLMs without relying on online providers.
 
-### LM Studio
-
 LM Studio is a tool that allows developers to experiment with different LLMs without relying on online providers. It provides a user-friendly interface for selecting and configuring LLMs, as well as a chat interface for interacting with the LLMs. It also includes features for fine-tuning and deploying LLMs. This technique is useful for developers who want to experiment with different LLMs.
+
+### Installation
+
+For installation, you can follow the instructions [here](https://lmstudio.ai/docs/)
+
+
 
 ## 🧪 Exercises
 
