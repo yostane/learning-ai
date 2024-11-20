@@ -62,13 +62,14 @@ Github CLI is not supported yet with our Worldline account, so you need to use t
 
 
 ## Gihub Spark
+
 [GitHub Spark](https://githubnext.com/projects/github-spark#introducing-github-spark) is an AI-powered tool for creating and sharing micro apps (“sparks”), which can be tailored to your exact needs and preferences, and are directly usable from your desktop and mobile devices. Without needing to write or deploy any code.
 
 And it enables this through a combination of three tightly-integrated components:
 
-An NL-based editor, which allows easily describing your ideas, and then refining them over time
-A managed runtime environment, which hosts your sparks, and provides them access to data storage, theming, and LLMs
-A PWA-enabled dashboard, which lets you manage and launch your sparks from anywhere
+* An NL-based editor, which allows easily describing your ideas, and then refining them over time
+* A managed runtime environment, which hosts your sparks, and provides them access to data storage, theming, and LLMs
+* A PWA-enabled dashboard, which lets you manage and launch your sparks from anywhere
 
 
 ## 🧪 Exercises

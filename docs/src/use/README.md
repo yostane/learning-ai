@@ -35,6 +35,9 @@ Introduced in Wei et al. (2022), chain-of-thought (CoT) prompting enables comple
 [Prompting Guide with CoT](https://www.promptingguide.ai/techniques/cot)
 
 ### Framework : ReAct Prompting
+
+![react](../assets/images/react.png)
+
 Yao et al., 2022 introduced a framework named ReAct where LLMs are used to generate both reasoning traces and task-specific actions in an interleaved manner.
 
 Generating reasoning traces allow the model to induce, track, and update action plans, and even handle exceptions. The action step allows to interface with and gather information from external sources such as knowledge bases or environments.
