@@ -9,7 +9,11 @@ Copilot can now use other LLMs than OpenAI, including Google, and Anthropic to p
 Github Copilot is a tool that uses the OpenAI language models to provide code suggestions and suggestions for improving code quality.
 
 ::: tip Alternative code assistance
-There is also other producs indegrated to IDEs such as [Gitlab Duo](https://about.gitlab.com/fr-fr/gitlab-duo/), [Gemini Code Assist](https://cloud.google.com/gemini/docs/codeassist/overview?hl=fr), [SuperMaven](https://supermaven.com/), [AWS CodeWhisperer](https://docs.aws.amazon.com/codewhisperer/latest/userguide/what-is-cwspr.html), and more.
+There is also other producs indegrated to IDEs such as :
+* [Gitlab Duo](https://about.gitlab.com/fr-fr/gitlab-duo/),
+* [Gemini Code Assist](https://cloud.google.com/gemini/docs/codeassist/overview?hl=fr), 
+* [SuperMaven](https://supermaven.com/), 
+* [AWS CodeWhisperer](https://docs.aws.amazon.com/codewhisperer/latest/userguide/what-is-cwspr.html), and more.
 :::
 
 ### Copilot Chat
@@ -24,8 +28,6 @@ it's available on :
 - Web version in github.com (Preview)
 
 It is a similar approach to chat GPT prompting optimised for the developper experience.
-
-
 
 ### CLI
 CLI helps you using you command line interpreter
@@ -74,5 +76,6 @@ A PWA-enabled dashboard, which lets you manage and launch your sparks from anywh
 ## 📖 Further readings
 *[Worldline AI coding assistant](https://confluence.worldline-solutions.com/display/AICA/AI+Coding+Assistants+Home)
 * [Worldline Data platform](https://confluence.worldline-solutions.com/display/DPTECHNO/Data+Platform)
-
+* [Copilot trust Center](https://resources.github.com/copilot-trust-center/)
+* [Chat with your IDE](https://docs.github.com/en/copilot/github-copilot-chat/using-github-copilot-chat-in-your-ide)
 

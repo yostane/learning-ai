@@ -27,6 +27,13 @@ By using "act as," you are establishing a specific context for the language mode
 on a prompt about a futuristic world where robots have become sentient."
 ```
 
+### Chain of Thought
+
+![Chain of Thought](../assets/images/cot.png)
+
+Introduced in Wei et al. (2022), chain-of-thought (CoT) prompting enables complex reasoning capabilities through intermediate reasoning steps. You can combine it with few-shot prompting to get better results on more complex tasks that require reasoning before responding.
+[Prompting Guide with CoT](https://www.promptingguide.ai/techniques/cot)
+
 ### Summarize
 Summary is a prompt engineering technique that involves providing a summary of a given document or text. It can helps for summarizing changelogs, articles, or other technical documents.
 
