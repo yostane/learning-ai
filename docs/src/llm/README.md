@@ -3,25 +3,22 @@
 
 LibreChat is a free, open source AI chat platform. This Web UI offers vast customization, supporting numerous AI providers, services, and integrations. Serves all AI Conversations in one place with a familiar interface, innovative enhancements, for as many users as you need.
 
-1. Prompts history
-2. AI providers 
-3. AI model version
-4. Preformatted prompts 
-5. RAG
+The full librechat documentation is available [here](https://www.librechat.ai/docs)
+
+Let's discover how to use LibreChat to create efficient and effective conversations with AI for developers.
+
+## Prompts history
+Prompts history allows users to save and load prompts for their conversations and easily access them later. Reusing prompts can save time and effort, especially when working with multiple conversations and keep track of the context and details of a conversation.
 
 ## Favorites
-
-The favorites feature in our app is a powerful tool that allows users to save and load favorite prompts for their conversations.
+The favorites feature allows users to save and load favorite prompts for their conversations and easily access them later.
 
 ## Presets
-The `presets` feature in our app is a powerful tool that allows users to save and load predefined settings for initialise a conversations. Users can import and export these presets as JSON files, set a default preset, and share them with others.
+The `presets` feature allows users to save and load predefined settings for initialise a conversations. Users can import and export these presets as JSON files, set a default preset, and share them with others.
 
 ## Preformatted prompts 
-
-The prompts feature in our app is a powerful tool that allows users to save and load predefined prompts for their conversations.
+The prompts feature allows users to save and load predefined prompts to use it during their conversations.
 You can use a prompt with the /[`prompt command`]. A prompt can have parameters, which are replaced with values when the prompt is used.
-
-Prompts  creation is available at the right sidebar. You can create a new prompt, edit an existing prompt, or delete a prompt.
 
 **Exemple of preformatted prompts : Explain the following code snippet in Java, Kotlin or Javascript**
 
@@ -42,26 +39,18 @@ Explain the following {{language:Java|Kotlin|Javascript}} snippet of code:
 ## AI providers 
 
 ### Azure OpenAI
-Azure AI Search (formerly known as "Azure Cognitive Search") provides secure information retrieval at scale over user-owned content in traditional and generative AI search applications.
+Azure OpenAI Service provides REST API access to OpenAI's powerful language models, including the o1-preview, o1-mini, GPT-4o, GPT-4o mini, GPT-4 Turbo with Vision, GPT-4, GPT-3.5-Turbo, and Embeddings model series.
 
-Information retrieval is foundational to any app that surfaces text and vectors. Common scenarios include catalog or document search, data exploration, and increasingly feeding query results to prompts based on your proprietary grounding data for conversational and copilot search. When you create a search service, you work with the following capabilities:
+### Google Gemini
+Gemini is a large language model (LLM) developed by Google.  It's designed to be a multimodal AI, meaning it can work with and understand different types of information, including text, code, audio, and images. Google positions Gemini as a highly capable model for a range of tasks, from answering questions and generating creative content to problem-solving and more complex reasoning.  There are different versions of Gemini, optimized for different tasks and scales.
 
-* A search engine for vector search and full text and hybrid search over a search index
-* Rich indexing with integrated data chunking and vectorization (preview), lexical analysis for text, and optional applied AI for content extraction and transformation
-* Rich query syntax for vector queries, text search, hybrid queries, fuzzy search, autocomplete, geo-search and others
-* Azure scale, security, and reach
-* Azure integration at the data layer, machine learning layer, Azure AI services and Azure OpenAI
-
-### Google
-Google Programmable Search Engine (formerly known as Google Custom Search and Google Co-op) is a platform provided by Google that allows web developers to feature specialized information in web searches, refine and categorize queries and create customized search engines, based on Google Search
-
-### Anthropic
+### Anthropic Claude
 Claude is an Artificial Intelligence, trained by Anthropic. Claude can process large amounts of information, brainstorm ideas, generate text and code, help you understand subjects, coach you through difficult situations, help simplify your busywork so you can focus on what matters most, and so much more.
 
 ## Assistants 
-The Assistants API enables the creation of AI assistants, offering functionalities like code interpreter, knowledge retrieval of files, and function execution. The Assistants API allows you to build AI assistants within your own applications. An Assistant has instructions and can leverage models, tools, and files to respond to user queries. The Assistants API currently supports three types of tools: Code Interpreter, File Search, and Function calling.
+The Assistants API enables the creation of AI assistants, offering functionalities like code interpreter, knowledge retrieval of files, and function execution. The Assistants API allows you to build AI assistants within your own applications for specific needs. An Assistant has instructions and can leverage models, tools, and files to respond to user queries. The Assistants API currently supports three types of tools: Code Interpreter, File Search, and Function calling.
 
-### Azure Assistant
+![assistant](../assets/images/assistant.png)
 
 ## Plugins
 The plugins endpoint opens the door to prompting LLMs in new ways other than traditional input/output prompting.
@@ -110,31 +99,31 @@ You can mix plugins to create more complex prompts. For example, you can use the
 ```
 Generate the favicon 16x16 pixels based on the content found in 
 https://worldline.github.io/learning-ai/overview/ with Browser plugin 
-and generate the favicon with DallE. I want no background and black and 
-white style image
+and generate the favicon with DallE. I want no background and black and white image
 ```
 ![prompt](../assets/images/multi_plugin.png)
 ![Favicon](../assets/images/result_prompt.png)
 
 ## RAG
 
-RAG is possible with LIbrechat. You can use RAG to create a conversation with the AI.
+RAG is possible with LibreChat. You can use RAG to create a conversation with the AI.
 To can add files to the conversation, you go to the file tab and select the file you want to add. Then the file will be added to the file manager and you can use it in the prompt.
 
 The file can be an png, a video, a text file, or a PDF file.
 
 ## 🧪 Exercises
 
-#### Try to make a request respecting Persona, Task and Context, and format structure
-
-#### Prompt creation
+#### 1. Prompt creation
 
 Select one prompt engineering technique and make a prompt in librechat that can be called with the `/[prompt_name]` command.
 
-#### Plugins mixing
+#### 2. Plugins mixing
 
-Use the Browse and Dall-E plugins to create a prompt that generates a technical diagram based on the content of this learning-ai website
+Use the Browse and Dall-E plugins to create a prompt that generates a a favicon based on the content of this learning-ai website.
 
+#### 3. Make your own assistant
+
+Choose your favorite topic ( cooking, travel, sports, etc.) and create an assistant that can answer questions about it. You can share documents, files and instructions to configure your custom assistant and use it.
 
 ## 📖 Further readings
 * [LibreChat Worldline guides](https://worldline365.sharepoint.com/:u:/r/sites/GenerativeAIQA/SitePages/LibreChat-guides.aspx?csf=1&web=1&e=evKJpU)
