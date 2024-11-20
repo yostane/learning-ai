@@ -44,15 +44,12 @@ Beyond the core platform and APIs, Google offers several specialized AI products
 - **Google AI Platform Notebooks (integrated into Vertex AI):** Jupyter Notebook environments hosted on Google Cloud. (Previously a separate offering, often confused with Google Colab.)
 - **Dialogflow CX:** A conversational AI platform for building complex conversational experiences.
 
-##  Manage models (ML Flow)
-MLflow provides tools for managing experiments, tracking model versions, deploying models to various environments, and managing models in a central registry. It's designed to be platform-agnostic, meaning it can work with many different cloud providers and even on-premises infrastructure.
-
 ## Function calling (langchain4j)
 Function calling is a feature that allows you to call functions from other services. It is useful for working with functions, such as APIs, and for interacting with models that require function calls.
 
 To use function calling, you need to specify the function name and arguments in the prompt. 
 
-Ressouces Jean François James
+
 
 ## Structured Outputs (Json Mode) 
 Json mode is a feature that allows you to send structured data to the model. It is useful for working with structured data, such as JSON objects, and for interacting with models that require structured input.
@@ -72,6 +69,8 @@ Hugging Face is a platform for researchers and developers to share, explore, and
 - Creating/deploy/customize a model
 - Pre-trained model, use behind the APIs, also a ML part, training model generation for use
 
+##  Manage models (ML Flow)
+MLflow provides tools for managing experiments, tracking model versions, deploying models to various environments, and managing models in a central registry. It's designed to be platform-agnostic, meaning it can work with many different cloud providers and even on-premises infrastructure.
 
 ## 🧪 Exercises
 

@@ -7,7 +7,7 @@ The full librechat documentation is available [here](https://www.librechat.ai/do
 
 Let's discover how to use LibreChat to create efficient and effective conversations with AI for developers.
 
-## Prompts history
+## History
 Prompts history allows users to save and load prompts for their conversations and easily access them later. Reusing prompts can save time and effort, especially when working with multiple conversations and keep track of the context and details of a conversation.
 
 ## Favorites
