@@ -1,12 +1,12 @@
 :root {
     // brand colors
-    --c-brand: #00A67E;
-    --c-brand-light: #00ff80;
+    --vp-c-brand: #00A67E;
+    --vp-c-brand-light: #00ff80;
 }
 
 html.dark {
-    --c-brand: #00A67E;
-    --c-brand-light: #00ff80;
+    --vp-c-brand: #00A67E;
+    --vp-c-brand-light: #00ff80;
 }
 
 iframe {
@@ -17,5 +17,4 @@ iframe {
     max-width: 150px;
     width: auto;
     height: auto;
-  }
-  
+}
