@@ -4,6 +4,25 @@
 
 For basic APIs exchange with LibreChat, you can use simple HTTP requests. You can use the `/api/v1/chat/completions` endpoint to send a request to the API and receive a response.
 
+### Usage 
+
+### Structured Outputs (Json Mode) 
+Json mode is a feature that allows you to send structured data to the model. It is useful for working with structured data, such as JSON objects, and for interacting with models that require structured input.
+
+To use Json mode, you need to specify the input format as JSON in the prompt. You can do this by adding the following line to the beginning of your prompt:
+
+### Function calling (langchain4j)
+Function calling is a feature that allows you to call functions from other services. It is useful for working with functions, such as APIs, and for interacting with models that require function calls.
+
+To use function calling, you need to specify the function name and arguments in the prompt. 
+
+### 🧪 Exercises
+
+#### Exercice 1 : Request an LLM with Json mode by using the Langchain4j or JS lanchchain  library
+
+#### Exercice 2 : Request an LLM with function calling by using the Langchain4j or JS lanchchain  library
+
+
 ## CloudAI with GCP
 GCP is a suite of cloud computing services provided by Google. It includes a wide range of tools and services for building and consuming LLMs, such as Vertex AI, Google Colab, and ML Flow.
 
@@ -44,21 +63,20 @@ Beyond the core platform and APIs, Google offers several specialized AI products
 - **Google AI Platform Notebooks (integrated into Vertex AI):** Jupyter Notebook environments hosted on Google Cloud. (Previously a separate offering, often confused with Google Colab.)
 - **Dialogflow CX:** A conversational AI platform for building complex conversational experiences.
 
-## Function calling (langchain4j)
-Function calling is a feature that allows you to call functions from other services. It is useful for working with functions, such as APIs, and for interacting with models that require function calls.
 
-To use function calling, you need to specify the function name and arguments in the prompt. 
+### 🧪 Exercises
 
-
-
-## Structured Outputs (Json Mode) 
-Json mode is a feature that allows you to send structured data to the model. It is useful for working with structured data, such as JSON objects, and for interacting with models that require structured input.
-
-To use Json mode, you need to specify the input format as JSON in the prompt. You can do this by adding the following line to the beginning of your prompt:
+#### Exercice 1 : Use Vertex AI to fork and deploy a model
+#### Exercice 2 : Use AI Studio to train a simple model
+#### Exercice 3 : Use you instance to create a simple chatbot application
 
 
 ## Advanced RAG  (llama-index)
 RAG with Ollama CLI with Langchain4j and llama-index
+
+### 🧪 Exercises
+
+#### Exercice 1 : Use llama-index with Ollama CLI to make a simple RAG request
 
 
 ## Collaborative (Hugging Face)
@@ -69,9 +87,21 @@ Hugging Face is a platform for researchers and developers to share, explore, and
 - Creating/deploy/customize a model
 - Pre-trained model, use behind the APIs, also a ML part, training model generation for use
 
+### 🧪 Exercises
+
+#### Exercice 1 : Use Hugging Face to use a pre-trained model of worldline fraud detection model
+
+
+
 ##  Manage models (ML Flow)
 MLflow provides tools for managing experiments, tracking model versions, deploying models to various environments, and managing models in a central registry. It's designed to be platform-agnostic, meaning it can work with many different cloud providers and even on-premises infrastructure.
 
 ## 🧪 Exercises
+
+#### Exercice 1 : Use MLFlow to create a model registry in GCP instance
+
+1. Create a model registry in GCP instance
+2. Create a model in the registry
+3. Deploy the model to GCP instance
 
 ## 📖 Further readings
