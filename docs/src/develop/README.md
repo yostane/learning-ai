@@ -74,6 +74,10 @@ And it enables this through a combination of three tightly-integrated components
 
 ## 🧪 Exercises
 
+### Exercice 1 : install Github Copilot on VSCode and generate tests for the following project repository
+### Exercice 2 : user Copilot IntelliJ IDEA to refactor the following project repository
+### Exercice 3 : Une vercel V0 or github spark to create an application that ... 
+
 ## 📖 Further readings
 *[Worldline AI coding assistant](https://confluence.worldline-solutions.com/display/AICA/AI+Coding+Assistants+Home)
 * [Worldline Data platform](https://confluence.worldline-solutions.com/display/DPTECHNO/Data+Platform)
