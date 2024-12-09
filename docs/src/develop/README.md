@@ -42,7 +42,7 @@ gh copilot explain "traceroute github.com"
 Github CLI is not supported yet with our Worldline account, so you need to use the web version with the link here
 :::
 
-### JetBrains integration
+### IDEs integration (VSCode)
 
 #### Completion
 #### Assistance
@@ -51,15 +51,12 @@ Github CLI is not supported yet with our Worldline account, so you need to use t
 #### Documentation
 #### Architecture diagram
 
-### VSCode integration
+## 🧪 Exercise
 
-#### Completion
-#### Assistance
-#### Refactoring
-#### Test generation
-#### Documentation
-#### Architecture diagram
-
+::: warning TODO
+### Install Github Copilot on VSCode and generate tests for the following project repository
+### Use Copilot to refactor the following project repository
+:::
 
 ## Gihub Spark
 
@@ -72,11 +69,11 @@ And it enables this through a combination of three tightly-integrated components
 * A PWA-enabled dashboard, which lets you manage and launch your sparks from anywhere
 
 
-## 🧪 Exercises
+## 🧪 Exercise
 
-### Exercice 1 : install Github Copilot on VSCode and generate tests for the following project repository
-### Exercice 2 : user Copilot IntelliJ IDEA to refactor the following project repository
-### Exercice 3 : Une vercel V0 or github spark to create an application that ... 
+::: warning TODO
+### Use vercel V0 or github spark to create an application that ... 
+:::
 
 ## 📖 Further readings
 *[Worldline AI coding assistant](https://confluence.worldline-solutions.com/display/AICA/AI+Coding+Assistants+Home)

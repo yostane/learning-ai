@@ -14,8 +14,15 @@ Langchain is a framework for building applications powered by language models (L
 
 ##  Use APIs (Mistral)
 
-::: tip request your API key
-You can request your API key from mistral [here](https://console.mistral.ai/api-keys/)
+::: tip configuration
+**To set Up Your Environment**
+   - Install the necessary packages using pip:
+     ```bash
+     pip install requests langchain langchain_mistralai
+     ```
+
+**To obtain API Keys**
+   - Obtain an API key for the Mistral API [here](https://console.mistral.ai/api-keys/) 
 :::
 
 ### Main enpoints 
@@ -137,6 +144,10 @@ the structured output can be as follow :
 
 Create a Python application that generates humorous motivational quotes for developers based on their name, favorite programming language, and a brief description of their current project or challenge.
 
+::: tip Library for making API calls
+You can use [requests](https://requests.readthedocs.io/en/latest/) for making API calls in Python.
+:::
+
 **Expected Output**
 
 ```bash
@@ -209,30 +220,15 @@ response=chain.invoke(input_data)
 
 Multiple prompt can be chained together to create complex workflows.
 
-### AIMessage
+#### AIMessage
 [`AIMessage`](https://api.python.langchain.com/en/latest/messages/langchain_core.messages.ai.AIMessage.html) is returned from a chat model as a response to a prompt. It contains the message type, content, and any additional parameters. 
 
-### Tool/Function calling 
-[`Function/Tool calling`](https://python.langchain.com/docs/how_to/tool_calling/) is a feature that allows the llm to call existing functions from your code. It is useful for working with functions, such as APIs, and for interacting with models that require function calls. Once a tool function is created, you can register it as a tool within LangChain for being used by the LLM.
 
-### 🧪 Exercises
+### 🧪 Exercise
 
 #### Request an LLM in JSON mode with structured output in JSON format
 
 Create a Python application that generates humorous motivational quotes for developers based on their name, favorite programming language, and a brief description of their current project or challenge.
-
-**Implement the Functionality**
-
-Create a function `get_developer_motivation(name, language, project_description)` that:
-
-- Takes a developer's name, their favorite programming language, and a brief description of their current project or challenge as input.
-- Uses langchain to send a request to the LLM to generate a humorous motivational quote.
-- Returns a structured response containing the quote, the developer's name, the programming language, and the project description.
-
-**Requirements**
-
-- *langchain_mistralai* python package. You can get more package information [here](https://python.langchain.com/docs/integrations/chat/mistralai/) 
-
 
 **Expected Output**
 
@@ -247,9 +243,24 @@ Author: Unknown
 --------------------------
 ```
 
+**Steps**
+
+Create a function `get_developer_motivation(name, language, project_description)` that:
+
+- Takes a developer's name, their favorite programming language, and a brief description of their current project or challenge as input.
+- Uses langchain to send a request to the LLM to generate a humorous motivational quote.
+- Returns a structured response containing the quote, the developer's name, the programming language, and the project description.
+
 ::: details Solution
 [Google Collab notebook](https://colab.research.google.com/drive/1oGPjmOlYPwTq19HGpY8PFhsX8OuwPK22?usp=sharing)
 :::
+
+
+### Tool/Function calling 
+[`Function/Tool calling`](https://python.langchain.com/docs/how_to/tool_calling/) is a feature that allows the llm to call existing functions from your code. It is useful for working with functions, such as APIs, and for interacting with models that require function calls. Once a tool function is created, you can register it as a tool within LangChain for being used by the LLM.
+
+
+### 🧪 Exercise
 
 ####  Request an LLM with  Tool/Function calling
 
@@ -265,27 +276,16 @@ The current weather in Paris is: overcast clouds with a temperature of 6.63°C.
 ------------------------------------------------------------------------------
 ```
 
-##### Requirements
-
-- `requests` library for making API calls
-- `langchain` and `langchain_mistralai` packages for integrating with the Mistral API
-
-##### Steps
-
-**Set Up Your Environment**
-   - Install the necessary packages using pip:
-     ```bash
-     pip install requests langchain langchain_mistralai
-     ```
-
-**Obtain API Keys**
-   - Obtain an API key for the Mistral API [here](https://console.mistral.ai/api-keys/) 
+::: tip Configuration
    - Sign up for an API key from a weather service provider (e.g., OpenWeatherMap).
      - You can generate your key [here](   https://home.openweathermap.org/api_keys)
      - You can call the API as following :
      ```bash
         curl https://api.openweathermap.org/data/2.5/weather?q=Lille&appid=<your_api_key>&units=metric
      ```
+:::
+
+##### Steps
 
 **Create the Weather Fetching Function**
    - Define a function `fetch_weather(city: str) -> dict` that takes a city name as input and returns the weather data as a dictionary. Use the weather API to fetch the data.
@@ -310,7 +310,21 @@ The current weather in Paris is: overcast clouds with a temperature of 6.63°C.
    - Prompt the user to enter a city name.
    - Call the `handle_user_input` function with the provided city name and display the result.
 
+::: details Solution
+[Google Collab notebook](https://colab.research.google.com/drive/16B84XU5dl2UR5XZkRtnh3MWUK0K5ZBd_?usp=sharing)
+:::
 
+##  RAG for services  (llama-index)
+
+llama-index is a powerful tool for building and deploying RAG (Retrieval Augmented Generation) applications. It provides a simple and efficient way to integrate LLMs into your applications, allowing you to retrieve relevant information from a large knowledge base and use it to generate responses.
+
+RAG is a technique that leverages the power of LLMs to augment human-generated content.
+
+### 🧪 Exercises
+
+::: warning TODO
+
+:::
 
 ## CloudAI with GCP
 GCP is a suite of cloud computing services provided by Google. It includes a wide range of tools and services for building and consuming LLMs, such as Vertex AI, Google Colab, and ML Flow.
@@ -349,19 +363,15 @@ Beyond the core platform and APIs, Google offers several specialized AI products
 
 ### 🧪 Exercises
 
-#### Exercice 1 : Use Vertex AI to fork and deploy a model
-#### Exercice 2 : Use AI Studio to train a simple model
-#### Exercice 3 : Use you instance to create a simple chatbot application
+::: warning TODO
+####  Fork and deploy a model
+
+####  Train a simple model
+
+####  Create a simple chatbot application with your instance
+:::
 
 
-## Advanced RAG  (llama-index)
-RAG with Ollama CLI with Langchain4j and llama-index
-
-https://www.librechat.ai/docs/configuration/rag_api
-
-### 🧪 Exercises
-
-#### Exercice 1 : Use llama-index with Ollama CLI to make a simple RAG request
 
 
 ## Collaborative (Hugging Face)
@@ -372,18 +382,20 @@ Hugging Face is a platform for researchers and developers to share, explore, and
 - Creating/deploy/customize a model
 - Pre-trained model, use behind the APIs, also a ML part, training model generation for use
 
-### 🧪 Exercises
+### 🧪 Exercise
 
-#### Exercice 1 : Use Hugging Face to use a pre-trained model of worldline fraud detection model
-
-
+::: warning TODO
+#### Use a pre-trained model of worldline fraud detection model
+:::
 
 ##  Manage models (ML Flow)
 MLflow provides tools for managing experiments, tracking model versions, deploying models to various environments, and managing models in a central registry. It's designed to be platform-agnostic, meaning it can work with many different cloud providers and even on-premises infrastructure.
 
-## 🧪 Exercises
+## 🧪 Exercise
 
-#### Exercice 1 : Use MLFlow to create a model registry in GCP instance
+::: warning TODO
+#### create a model registry in GCP instance
+::: 
 
 1. Create a model registry in GCP instance
 2. Create a model in the registry
