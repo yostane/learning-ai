@@ -10,13 +10,19 @@ actions:
 features:
   - title: Let's start
     details:  Prerequisites - Definitions - A bit of History - The market
-  - title: General assistants
-    details: Prompt engineering - LibreChat quickstart - Offline prompting
+  - title: Prompt with AI
+    details: Prompt with AI, Prompt engineering, Definition, Chain of Thought,  ReAct Prompting, promt for developers, code explanation...
+  - title: Online with Librechat
+    details:  History, Favorites, Presets, Preformatted prompts, AI providers, Plugins & mixing, RAG...
+  - title: Offline with LM Studio
+    details:  Installation, Model configuration, enable APIs...
   - title: Develop with AI
     details:  Github Copilot
   - title: AI for services
     details: Cloud LLMs - Advanced RAG
 footer: Worldline © 2024 | tech at Worldline
+
+
 ---
 ::: warning Disclamer
  LLMs and MMLLMs are constantly evolving, and new applications for developer training are emerging all the time.

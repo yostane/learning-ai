@@ -1,25 +1,67 @@
 #  AI for services 
 
-### Notebook
+## Definitions
+
+### Google Colab
 You can use [Google collab](https://colab.research.google.com/) for a simple to use notebook environment for machine learning and data science. It will provide a container with all the necessary libraries and tools to run your code and live editing interface through a browser.
 
 A notebook is a document that contains live code, equations, visualizations, and narrative text. You can use Colab to create, share, and collaborate on Jupyter notebooks with others. 
 
-##  Mistral AI & Langchain
 
-### Langchain support 
+### Langchain
+Langchain is a framework for building applications powered by language models (LLMs) like OpenAI's GPT-3. It provides a set of tools and utilities for working with LLMs, including prompt engineering, chain of thought, and memory management. Langchain is designed to be modular and extensible, allowing developers to easily integrate with different LLMs and other AI services.
 
-Depending on the LLM, langchain provides different APIs. Have a look at the following table [here](https://python.langchain.com/docs/integrations/chat/mistralai/) to see which APIs are available for your LLM.
 
-| Model Features            | Tool Calling | Structured Output | JSON Mode | Image Input | Audio Input | Video Input | Token-Level Streaming | Native Async | Token Usage | Logprobs |
-|---------------------------|--------------|-------------------|-----------|-------------|-------------|-------------|-----------------------|--------------|-------------|----------|
-|                           | ✅            | ✅                 | ✅         | ❌           | ❌           | ❌           | ✅                     | ✅            | ✅           | ❌        |
+##  Use APIs (Mistral)
 
-### Usage 
+::: tip request your API key
+You can request your API key from mistral [here](https://console.mistral.ai/api-keys/)
+:::
 
-### Structured Outputs  & Json Mode 
+### Main enpoints 
 
-Json mode is a feature that allows you to send structured data to the model through the API instead of a text prompt. To use Json mode, you need to select the right endpoint in the API explorer and specify the input format as JSON in the prompt.
+| Endpoint                                      | URL                                             | Description                                                                                     |
+|-----------------------------------------------|-------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| Models                                        | [/v1/models](https://api.mistral.ai/v1/models)   | List models that are available with your account.                                             |
+| Chat Completions                              | [/v1/chat/completions](https://api.mistral.ai/v1/chat/completions) | Completion means that the LLM will generate a response based on the prompt.                   |
+| Embeddings                                    | [/v1/embeddings](https://api.mistral.ai/v1/embeddings) | Embeddings means that the LLM will generate a vector representation of the input text.        |
+
+
+```bash
+curl -H "Authorization: Bearer <your_api_key>" https://api.mistral.ai/v1/models
+```
+output :
+```json
+[
+  {
+    "id": "text-davinci-003",
+    "object": "model",
+    "owned_by": "user-123456789",
+    "permission": [
+      {
+        "id": "user-123456789",
+        "object": "permission",
+        "allow_create_engine": true,
+        "allow_sampling": true,
+        "allow_logprobs": true,
+        "allow_search": true,
+        "allow_view": true,
+        "allow_fine_tuning": true,
+        "organization": "org-123456789",
+        "group": null,
+        "is_blocking": false
+      }
+    ]
+  }
+  ...
+]
+```
+
+
+
+###  Json Mode 
+
+`Json mode` is a feature that allows you to send structured data to the model through the API instead of a text prompt. To use Json mode, you need to select the right endpoint in the API explorer and specify the input format as JSON in the prompt.
 
 For OpenAI API, you can use the following format :
 
@@ -31,7 +73,37 @@ For OpenAI API, you can use the following format :
 }
 ```
 
-Structured outputs are a feature that allows you to receive structured data from the model through the API. It is useful for working with models that require structured outputs, such as JSON, XML, or CSV.
+```bash
+curl -H "Authorization: Bearer <your_api_key>" -H "Content-Type: application/json" -d '{"model": "text-davinci-003", "prompt": "Translate the following text to French: 'Hello, how are you?'", "max_tokens": 100}' https://api.mistral.ai/v1/chat/completions
+
+{
+  "id": "chatcmpl-123456789",
+  "object": "chat.completion",
+  "created": 1679341456,
+  "model": "text-davinci-003",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Bonjour, comment ça va?"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5,
+    "completion_tokens": 7,
+    "total_tokens": 12
+  }
+}
+```
+
+
+
+### Structured Outputs 
+
+`Structured outputs` are a feature that allows you to receive structured data from the model through the API. It is useful for working with models that require structured outputs, such as JSON, XML, or CSV.
 
 To use structured outputs, you need to select the right endpoint in the API explorer and specify the output format in the prompt.
 
@@ -44,37 +116,77 @@ for OpenAI API, you can use the following format :
   "max_tokens": 100,
   "output": "json"  
 }
+```
+
+the structured output can be as follow :
+```json
+{
+  "model": "text-davinci-003",
+  "prompt": "Translate the following text to French: 'Hello, how are you?'",
+  "max_tokens": 100,
+  "output": {
+    "text": "Bonjour, comment ça va?"
+  }
+}
 
 ```
 
-## Langchain features
+## Use Langchain (Mistral)
 
-### Chain
-[`Chain`](https://python.langchain.com/v0.1/docs/modules/chains/) Chains refer to sequences of calls - whether to an LLM, a tool, or a data preprocessing step. It is a sequence of calls that are executed in order, with the output of one call being the input for the next call.It enables you to create complex workflows by combining the output of one LLM call with the input of another. This is useful for tasks that require multiple steps or interactions with external systems.
+### Support 
 
-### AIMessage
-[`AIMessage`](https://api.python.langchain.com/en/latest/messages/langchain_core.messages.ai.AIMessage.html) is returned from a chat model as a response to a prompt. It contains the message type, content, and any additional parameters. 
+Depending on the LLM, langchain provides different APIs. Have a look at the following table [here](https://python.langchain.com/docs/integrations/chat/mistralai/) to see which APIs are available for your LLM.
+
+| Model Features            | Tool Calling | Structured Output | JSON Mode | Image Input | Audio Input | Video Input | 
+|---------------------------|--------------|-------------------|-----------|-------------|-------------|-------------|
+|                           | ✅            | ✅                 | ✅         | ❌           | ❌           | ❌           | 
+
+
+To use langchain with mistral, you need to install the `langchain_mistralai` package and create a `ChatMistralAI` object.
+
+```python
+from langchain_mistralai.chat_models import ChatMistralAI
+# Define your API key and model
+API_KEY = 'your_api_key'  # Replace with your actual Mistral API key
+MISTRAL_API_URL = 'https://api.mistral.ai/v1/chat/completions'
+llm = ChatMistralAI(api_key=API_KEY, model="open-mistral-7b")
+```
 
 ### Prompt templating
 [`Prompt templating`](https://python.langchain.com/api_reference/core/prompts/langchain_core.prompts.prompt.PromptTemplate.html#prompttemplate) is a powerful feature that allows you to create dynamic prompts based on the input data. It enables you to generate prompts that are tailored to the specific requirements of your application.
 
-### Custom tools
-[`Custom tools`](https://python.langchain.com/docs/how_to/tool_calling/) are a feature that allows you to define custom functions or tools within LangChain. These tools can be used to perform specific tasks when interacting with the language model. The llm can request these tools to be executed and provide the final output.
+```python
+from langchain.prompts import PromptTemplate
 
-Once a tool function is generated, you can register it as a tool within LangChain for further use.
+prompt = PromptTemplate(
+    input_variables=["text", "language"],
+    template="translate the following text to {language}: {text}",
+)
+```
 
-### Function calling 
-Function calling is a feature that allows you to call functions from other services. It is useful for working with functions, such as APIs, and for interacting with models that require function calls.
+### Chain
 
-Function Calling: This feature enables the language model to understand your request and generate the necessary code or function based on the prompt you provide.
+[`Chain`](https://python.langchain.com/v0.1/docs/modules/chains/) Chains refer to sequences of calls - whether to an LLM, a tool, or a data preprocessing step. It is a sequence of calls that are executed in order, with the output of one call being the input for the next call.It enables you to create complex workflows by combining the output of one LLM call with the input of another. This is useful for tasks that require multiple steps or interactions with external systems.
 
-To use function calling, you need to specify the function name and arguments in the prompt. 
+```python
+from langchain.chains import LLMChain
 
+input_data = {
+    "text": "Hello, how are you?",
+    "language": "French"
+}
 
+chain = prompt | llm_model
+response=chain.invoke(input_data)
+```
 
+Multiple prompt can be chained together to create complex workflows.
 
+### AIMessage
+[`AIMessage`](https://api.python.langchain.com/en/latest/messages/langchain_core.messages.ai.AIMessage.html) is returned from a chat model as a response to a prompt. It contains the message type, content, and any additional parameters. 
 
-
+### Tool/Function calling 
+[`Function/Tool calling`](https://python.langchain.com/docs/how_to/tool_calling/) is a feature that allows the llm to call existing functions from your code. It is useful for working with functions, such as APIs, and for interacting with models that require function calls. Once a tool function is created, you can register it as a tool within LangChain for being used by the LLM.
 
 ### 🧪 Exercises
 
@@ -108,7 +220,7 @@ Create a Python application that generates humorous motivational quotes for deve
 
 **Implement the Functionality**
 
-Create a function get_developer_motivation(name, language, project_description) that:
+Create a function `get_developer_motivation(name, language, project_description)` that:
 
 - Takes a developer's name, their favorite programming language, and a brief description of their current project or challenge as input.
 - Uses langchain to send a request to the LLM to generate a humorous motivational quote.
@@ -136,7 +248,7 @@ Author: Unknown
 [Google Collab notebook](https://colab.research.google.com/drive/1oGPjmOlYPwTq19HGpY8PFhsX8OuwPK22?usp=sharing)
 :::
 
-#### Exercice 3 : Request an LLM with Custom tool
+#### Exercice 3 : Request an LLM with  Tool/Function calling
 
 Build a command-line application that fetches weather data for a specified city using LangChain and a public weather API. The application will utilize implicit tool calling to allow the LLM to decide when to call the weather-fetching tool based on user input.
 
@@ -195,15 +307,13 @@ The current weather in Paris is: overcast clouds with a temperature of 6.63°C.
    - Prompt the user to enter a city name.
    - Call the `handle_user_input` function with the provided city name and display the result.
 
-#### Exercice 3 : Request an LLM with function calling
+
 
 ## CloudAI with GCP
 GCP is a suite of cloud computing services provided by Google. It includes a wide range of tools and services for building and consuming LLMs, such as Vertex AI, Google Colab, and ML Flow.
 
 ###  Large Consumer-Facing
-These products are directly available to consumers, often integrating AI capabilities into everyday applications:
 
-- **Google Colaboratory (Colab):** A free Jupyter Notebook environment hosted by Google. Excellent for learning, experimentation, and sharing machine learning code. While not a "production" platform like Vertex AI, it's extremely popular for its ease of use and free access to compute resources (though with limitations).
 - **Gemini:** Google's large language model (LLM), positioned as a competitor to OpenAI's GPT models. Gemini's capabilities are integrated into various Google products and services, and are also accessible through APIs. Different versions of Gemini (e.g., Gemini Pro, Gemini Ultra) offer varying levels of capability and access. It powers several consumer-facing features across Google's ecosystem.
 - **AI Studio** Cloud-based machine learning platform offered by several companies, most notably Google with its Google AI Studio (now largely integrated into Vertex AI) and Amazon with Amazon SageMaker Studio. While both share the general goal of providing a user-friendly environment for building, training, and deploying machine learning models, their specific features and offerings differ. https://aistudio.google.com/
 
@@ -218,7 +328,6 @@ This is the central hub for most Google Cloud's AI/ML services. It integrates an
 - **Vertex AI Matching Engine:** A service for performing similarity searches (for example, recommendation systems).
 
 ### Google Cloud APIs
-
 Pre-trained Models and APIs: Google offers numerous pre-trained models and APIs for various tasks, making it easier to integrate AI into applications without building models from scratch. Examples include:
 
 - **Google Cloud Natural Language API:** Processing and understanding text (sentiment analysis, entity recognition, etc.).
