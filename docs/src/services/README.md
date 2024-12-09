@@ -1,27 +1,201 @@
 #  AI for services 
 
-## APIs with LibreChat
+### Notebook
+You can use [Google collab](https://colab.research.google.com/) for a simple to use notebook environment for machine learning and data science. It will provide a container with all the necessary libraries and tools to run your code and live editing interface through a browser.
 
-For basic APIs exchange with LibreChat, you can use simple HTTP requests. You can use the `/api/v1/chat/completions` endpoint to send a request to the API and receive a response.
+A notebook is a document that contains live code, equations, visualizations, and narrative text. You can use Colab to create, share, and collaborate on Jupyter notebooks with others. 
+
+##  Mistral AI & Langchain
+
+### Langchain support 
+
+Depending on the LLM, langchain provides different APIs. Have a look at the following table [here](https://python.langchain.com/docs/integrations/chat/mistralai/) to see which APIs are available for your LLM.
+
+| Model Features            | Tool Calling | Structured Output | JSON Mode | Image Input | Audio Input | Video Input | Token-Level Streaming | Native Async | Token Usage | Logprobs |
+|---------------------------|--------------|-------------------|-----------|-------------|-------------|-------------|-----------------------|--------------|-------------|----------|
+|                           | ✅            | ✅                 | ✅         | ❌           | ❌           | ❌           | ✅                     | ✅            | ✅           | ❌        |
 
 ### Usage 
 
-### Structured Outputs (Json Mode) 
-Json mode is a feature that allows you to send structured data to the model. It is useful for working with structured data, such as JSON objects, and for interacting with models that require structured input.
+### Structured Outputs  & Json Mode 
 
-To use Json mode, you need to specify the input format as JSON in the prompt. You can do this by adding the following line to the beginning of your prompt:
+Json mode is a feature that allows you to send structured data to the model through the API instead of a text prompt. To use Json mode, you need to select the right endpoint in the API explorer and specify the input format as JSON in the prompt.
 
-### Function calling (langchain4j)
+For OpenAI API, you can use the following format :
+
+```json
+{
+  "model": "text-davinci-003",
+  "prompt": "Translate the following text to French: 'Hello, how are you?'",
+  "max_tokens": 100
+}
+```
+
+Structured outputs are a feature that allows you to receive structured data from the model through the API. It is useful for working with models that require structured outputs, such as JSON, XML, or CSV.
+
+To use structured outputs, you need to select the right endpoint in the API explorer and specify the output format in the prompt.
+
+for OpenAI API, you can use the following format :
+
+```json
+{
+  "model": "text-davinci-003",
+  "prompt": "Translate the following text to French: 'Hello, how are you?'",
+  "max_tokens": 100,
+  "output": "json"  
+}
+
+```
+
+## Langchain features
+
+### Chain
+[`Chain`](https://python.langchain.com/v0.1/docs/modules/chains/) Chains refer to sequences of calls - whether to an LLM, a tool, or a data preprocessing step. It is a sequence of calls that are executed in order, with the output of one call being the input for the next call.It enables you to create complex workflows by combining the output of one LLM call with the input of another. This is useful for tasks that require multiple steps or interactions with external systems.
+
+### AIMessage
+[`AIMessage`](https://api.python.langchain.com/en/latest/messages/langchain_core.messages.ai.AIMessage.html) is returned from a chat model as a response to a prompt. It contains the message type, content, and any additional parameters. 
+
+### Prompt templating
+[`Prompt templating`](https://python.langchain.com/api_reference/core/prompts/langchain_core.prompts.prompt.PromptTemplate.html#prompttemplate) is a powerful feature that allows you to create dynamic prompts based on the input data. It enables you to generate prompts that are tailored to the specific requirements of your application.
+
+### Custom tools
+[`Custom tools`](https://python.langchain.com/docs/how_to/tool_calling/) are a feature that allows you to define custom functions or tools within LangChain. These tools can be used to perform specific tasks when interacting with the language model. The llm can request these tools to be executed and provide the final output.
+
+Once a tool function is generated, you can register it as a tool within LangChain for further use.
+
+### Function calling 
 Function calling is a feature that allows you to call functions from other services. It is useful for working with functions, such as APIs, and for interacting with models that require function calls.
+
+Function Calling: This feature enables the language model to understand your request and generate the necessary code or function based on the prompt you provide.
 
 To use function calling, you need to specify the function name and arguments in the prompt. 
 
+
+
+
+
+
+
 ### 🧪 Exercises
 
-#### Exercice 1 : Request an LLM with Json mode by using the Langchain4j or JS lanchchain  library
+#### Exercice 1 : Request an LLM with with basic REST request 
 
-#### Exercice 2 : Request an LLM with function calling by using the Langchain4j or JS lanchchain  library
+Create a Python application that generates humorous motivational quotes for developers based on their name, favorite programming language, and a brief description of their current project or challenge.
 
+**Expected Output**
+
+```bash
+Enter your name: Ibrahim
+Enter your favorite programming language: kotlin
+Enter your current project description: conference app with KMP
+
+--- Motivational Quote ---
+Quote: "Code like you just ate a burrito... with passion, speed, and a little bit of mess!"
+Author: Unknown
+--------------------------
+```
+
+* [API Model list](https://docs.mistral.ai/api/#tag/models/operation/list_models_v1_models_get)
+* [Chat completions](https://docs.mistral.ai/api/#tag/chat/operation/chat_completion_v1_chat_completions_post)
+
+::: details Solution
+[Google Collab notebook](https://colab.research.google.com/drive/1CHb_WX3kZaCKShHdCI-4zut1Ro0HqgPd?usp=sharing)
+:::
+
+#### Exercice 2 : Request an LLM in JSON mode with structured output in JSON format
+
+Create a Python application that generates humorous motivational quotes for developers based on their name, favorite programming language, and a brief description of their current project or challenge.
+
+**Implement the Functionality**
+
+Create a function get_developer_motivation(name, language, project_description) that:
+
+- Takes a developer's name, their favorite programming language, and a brief description of their current project or challenge as input.
+- Uses langchain to send a request to the LLM to generate a humorous motivational quote.
+- Returns a structured response containing the quote, the developer's name, the programming language, and the project description.
+
+**Requirements**
+
+- *langchain_mistralai* python package. You can get more package information [here](https://python.langchain.com/docs/integrations/chat/mistralai/) 
+
+
+**Expected Output**
+
+```bash
+Enter your name: Ibrahim
+Enter your favorite programming language: kotlin
+Enter your current project description: conference app with KMP
+
+--- Motivational Quote ---
+Quote: "Code like you just ate a burrito... with passion, speed, and a little bit of mess!"
+Author: Unknown
+--------------------------
+```
+
+::: details Solution
+[Google Collab notebook](https://colab.research.google.com/drive/1oGPjmOlYPwTq19HGpY8PFhsX8OuwPK22?usp=sharing)
+:::
+
+#### Exercice 3 : Request an LLM with Custom tool
+
+Build a command-line application that fetches weather data for a specified city using LangChain and a public weather API. The application will utilize implicit tool calling to allow the LLM to decide when to call the weather-fetching tool based on user input.
+
+##### Output
+
+```bash
+Ask about the weather (e.g., 'Lille, France'): Paris
+
+------------------------------------------------------------------------------
+The current weather in Paris is: overcast clouds with a temperature of 6.63°C.
+------------------------------------------------------------------------------
+```
+
+##### Requirements
+
+- `requests` library for making API calls
+- `langchain` and `langchain_mistralai` packages for integrating with the Mistral API
+
+##### Steps
+
+**Set Up Your Environment**
+   - Install the necessary packages using pip:
+     ```bash
+     pip install requests langchain langchain_mistralai
+     ```
+
+**Obtain API Keys**
+   - Obtain an API key for the Mistral API [here](https://console.mistral.ai/api-keys/) 
+   - Sign up for an API key from a weather service provider (e.g., OpenWeatherMap).
+     - You can generate your key [here](   https://home.openweathermap.org/api_keys)
+     - You can call the API as following :
+     ```bash
+        curl https://api.openweathermap.org/data/2.5/weather?q=Lille&appid=<your_api_key>&units=metric
+     ```
+
+**Create the Weather Fetching Function**
+   - Define a function `fetch_weather(city: str) -> dict` that takes a city name as input and returns the weather data as a dictionary. Use the weather API to fetch the data.
+
+**Register the Weather Tool**
+   - Use the [`Tool`](https://python.langchain.com/docs/concepts/tools/) class from LangChain to register the `fetch_weather` function as a tool.
+
+**Set Up the LangChain Components**
+   - Create a prompt template that asks about the weather in a specified city.
+   - Instantiate the `ChatMistralAI` model with your Mistral API key.
+   - Create a chain that combines the prompt template, the chat model, and the registered weather tool.
+
+**Handle User Input**
+   - Implement a function `handle_user_input(city)` that:
+     - Takes user input for the city name.
+     - Invokes the chain with the input data.
+     - Checks if the response includes [`tool calls`](https://python.langchain.com/docs/how_to/tool_calling/).
+     - Extracts the function name and arguments from the tool call and invokes the weather tool if necessary.
+     - Returns the weather information or the LLM's response.
+
+**Run the Application**
+   - Prompt the user to enter a city name.
+   - Call the `handle_user_input` function with the provided city name and display the result.
+
+#### Exercice 3 : Request an LLM with function calling
 
 ## CloudAI with GCP
 GCP is a suite of cloud computing services provided by Google. It includes a wide range of tools and services for building and consuming LLMs, such as Vertex AI, Google Colab, and ML Flow.
@@ -73,6 +247,8 @@ Beyond the core platform and APIs, Google offers several specialized AI products
 
 ## Advanced RAG  (llama-index)
 RAG with Ollama CLI with Langchain4j and llama-index
+
+https://www.librechat.ai/docs/configuration/rag_api
 
 ### 🧪 Exercises
 
