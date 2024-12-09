@@ -103,7 +103,7 @@ curl -H "Authorization: Bearer <your_api_key>" -H "Content-Type: application/jso
 
 ### Structured Outputs 
 
-`Structured outputs` are a feature that allows you to receive structured data from the model through the API. It is useful for working with models that require structured outputs, such as JSON, XML, or CSV.
+`Structured outputs` are a feature that allows you to receive structured data from the model through the API. It is useful for working with models that require structured outputs, such as JSON.
 
 To use structured outputs, you need to select the right endpoint in the API explorer and specify the output format in the prompt.
 
@@ -130,6 +130,33 @@ the structured output can be as follow :
 }
 
 ```
+
+### 🧪 Exercises
+
+#### Request an LLM with with basic REST request 
+
+Create a Python application that generates humorous motivational quotes for developers based on their name, favorite programming language, and a brief description of their current project or challenge.
+
+**Expected Output**
+
+```bash
+Enter your name: Ibrahim
+Enter your favorite programming language: kotlin
+Enter your current project description: conference app with KMP
+
+--- Motivational Quote ---
+Quote: "Code like you just ate a burrito... with passion, speed, and a little bit of mess!"
+Author: Unknown
+--------------------------
+```
+
+* [API Model list](https://docs.mistral.ai/api/#tag/models/operation/list_models_v1_models_get)
+* [Chat completions](https://docs.mistral.ai/api/#tag/chat/operation/chat_completion_v1_chat_completions_post)
+
+::: details Solution
+[Google Collab notebook](https://colab.research.google.com/drive/1CHb_WX3kZaCKShHdCI-4zut1Ro0HqgPd?usp=sharing)
+:::
+
 
 ## Use Langchain (Mistral)
 
@@ -190,31 +217,7 @@ Multiple prompt can be chained together to create complex workflows.
 
 ### 🧪 Exercises
 
-#### Exercice 1 : Request an LLM with with basic REST request 
-
-Create a Python application that generates humorous motivational quotes for developers based on their name, favorite programming language, and a brief description of their current project or challenge.
-
-**Expected Output**
-
-```bash
-Enter your name: Ibrahim
-Enter your favorite programming language: kotlin
-Enter your current project description: conference app with KMP
-
---- Motivational Quote ---
-Quote: "Code like you just ate a burrito... with passion, speed, and a little bit of mess!"
-Author: Unknown
---------------------------
-```
-
-* [API Model list](https://docs.mistral.ai/api/#tag/models/operation/list_models_v1_models_get)
-* [Chat completions](https://docs.mistral.ai/api/#tag/chat/operation/chat_completion_v1_chat_completions_post)
-
-::: details Solution
-[Google Collab notebook](https://colab.research.google.com/drive/1CHb_WX3kZaCKShHdCI-4zut1Ro0HqgPd?usp=sharing)
-:::
-
-#### Exercice 2 : Request an LLM in JSON mode with structured output in JSON format
+#### Request an LLM in JSON mode with structured output in JSON format
 
 Create a Python application that generates humorous motivational quotes for developers based on their name, favorite programming language, and a brief description of their current project or challenge.
 
@@ -248,7 +251,7 @@ Author: Unknown
 [Google Collab notebook](https://colab.research.google.com/drive/1oGPjmOlYPwTq19HGpY8PFhsX8OuwPK22?usp=sharing)
 :::
 
-#### Exercice 3 : Request an LLM with  Tool/Function calling
+####  Request an LLM with  Tool/Function calling
 
 Build a command-line application that fetches weather data for a specified city using LangChain and a public weather API. The application will utilize implicit tool calling to allow the LLM to decide when to call the weather-fetching tool based on user input.
 
@@ -314,37 +317,34 @@ GCP is a suite of cloud computing services provided by Google. It includes a wid
 
 ###  Large Consumer-Facing
 
-- **Gemini:** Google's large language model (LLM), positioned as a competitor to OpenAI's GPT models. Gemini's capabilities are integrated into various Google products and services, and are also accessible through APIs. Different versions of Gemini (e.g., Gemini Pro, Gemini Ultra) offer varying levels of capability and access. It powers several consumer-facing features across Google's ecosystem.
-- **AI Studio** Cloud-based machine learning platform offered by several companies, most notably Google with its Google AI Studio (now largely integrated into Vertex AI) and Amazon with Amazon SageMaker Studio. While both share the general goal of providing a user-friendly environment for building, training, and deploying machine learning models, their specific features and offerings differ. https://aistudio.google.com/
-
+- **[Gemini:](https://gemini.google.com/)** Google's large language model (LLM), positioned as a competitor to OpenAI's GPT models. Gemini's capabilities are integrated into various Google products and services, and are also accessible through APIs. Different versions of Gemini (e.g., Gemini Pro, Gemini Ultra) offer varying levels of capability and access. It powers several consumer-facing features across Google's ecosystem.
+- **[AI Studio:](https://aistudio.google.com/)** Cloud-based machine learning platform offered by several companies, most notably Google with its Google AI Studio (now Vertex AI Studio). It provides APIs for leading foundation models, and tools to rapidly prototype, easily tune models with your own data, and seamlessly deploy to applications. 
 ### Vertex AI 
 This is the central hub for most Google Cloud's AI/ML services. It integrates and supersedes many previous offerings.
 
-- **Vertex AI Training:** Training machine learning models using various algorithms and frameworks (TensorFlow, PyTorch, scikit-learn, XGBoost, etc.). Provides access to managed compute instances (including TPUs).
-- **Vertex AI Prediction:** Deploying trained models for inference (making predictions). Offers different deployment options based on scale and latency requirements.
-- **Vertex AI Pipelines:** Creating and managing machine learning workflows, including data preprocessing, model training, evaluation, and deployment, as a series of connected steps.
-- **Vertex AI Model Monitoring:** Monitoring deployed models for performance degradation and potential issues (drift).
-- **Vertex AI Feature Store:** Centralized repository for storing, managing, and versioning features used in machine learning models, improving collaboration and reuse.
-- **Vertex AI Matching Engine:** A service for performing similarity searches (for example, recommendation systems).
+- **Custom Training:** Training machine learning models using various algorithms and frameworks (TensorFlow, PyTorch, scikit-learn, XGBoost, etc.). Provides access to managed compute instances (including TPUs).
+- **Prediction:** Deploying trained models for inference (making predictions). Offers different deployment options based on scale and latency requirements.
+- **Pipelines:** Creating and managing machine learning workflows, including data preprocessing, model training, evaluation, and deployment, as a series of connected steps.
+- **Model Monitoring:** Monitoring deployed models for performance degradation and potential issues (drift).
+- **Feature Store:** Centralized repository for storing, managing, and versioning features used in machine learning models, improving collaboration and reuse.
+- ...
 
 ### Google Cloud APIs
 Pre-trained Models and APIs: Google offers numerous pre-trained models and APIs for various tasks, making it easier to integrate AI into applications without building models from scratch. Examples include:
 
-- **Google Cloud Natural Language API:** Processing and understanding text (sentiment analysis, entity recognition, etc.).
-Google Cloud Vision API: Analyzing images (object detection, image classification, optical character recognition, etc.).
-- **Google Cloud Speech-to-Text API:** Converting audio to text.
-- **Google Cloud Text-to-Speech API:** Converting text to audio.
-- **Google Cloud Translation API:** Translating text between languages.
-- **Other APIs**: Many more APIs exist for various tasks like video intelligence, dialogflow (conversational AI), and more.
+- **Natural Language:** Processing and understanding text (sentiment analysis, entity recognition, etc.).
+- **Vision:**  Analyzing images (object detection, image classification, optical character recognition, etc.).
+- **Speech-to-Text:** Converting audio to text.
+- **Text-to-Speech:** Converting text to audio.
+- **Translation API:** Translating text between languages.
+- ...
 
 ### Specialized AI Products
 Beyond the core platform and APIs, Google offers several specialized AI products:
 
 - **TensorFlow:** A popular open-source machine learning framework developed by Google. While not strictly a "Google Cloud" product, it's deeply integrated with their services.
-- **TensorFlow Extended (TFX):** A platform for deploying TensorFlow models at scale, often used in conjunction with Vertex AI.
-- **JAX:** A high-performance machine learning library, often used for research and advanced applications.
-- **Google AI Platform Notebooks (integrated into Vertex AI):** Jupyter Notebook environments hosted on Google Cloud. (Previously a separate offering, often confused with Google Colab.)
-- **Dialogflow CX:** A conversational AI platform for building complex conversational experiences.
+- **Dialogflow:** A conversational AI platform for building complex conversational experiences.
+- ...
 
 
 ### 🧪 Exercises
