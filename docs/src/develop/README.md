@@ -45,6 +45,10 @@ Github CLI is not supported yet with our Worldline account, so you need to use t
 ### IDEs integration (VSCode)
 
 #### Completion
+![copilot-assistance](../assets/images/copilot_completion.gif)
+#### Generation
+![copilot-completion](../assets/images/copilot_generation.gif)
+
 #### Assistance
 #### Refactoring
 #### Test generation
@@ -54,8 +58,8 @@ Github CLI is not supported yet with our Worldline account, so you need to use t
 ## 🧪 Exercise
 
 ::: warning TODO
-### Install Github Copilot on VSCode and generate tests for the following project repository
-### Use Copilot to refactor the following project repository
+#### Install Github Copilot on VSCode and generate tests for the following project repository
+#### Use Copilot to refactor the following project repository
 :::
 
 ## Gihub Spark
@@ -72,7 +76,7 @@ And it enables this through a combination of three tightly-integrated components
 ## 🧪 Exercise
 
 ::: warning TODO
-### Use vercel V0 or github spark to create an application that ... 
+#### Use vercel V0 or github spark to create an application that ... 
 :::
 
 ## 📖 Further readings
