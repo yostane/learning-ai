@@ -32,7 +32,7 @@ export default defineUserConfig({
           "/llm/",
           "/offline/",
           "/develop/",
-          "/services/"
+          "/servicesai/"
         ], 
   }),
   bundler: viteBundler({
