@@ -356,7 +356,7 @@ response = query_engine.query("<your_query_here>")
 Structured Data is another common source of information for RAG applications. This data is typically stored in databases or spreadsheets and can be queried using SQL or other query languages. LlamaIndex provides tools for connecting LLMs to databases and querying structured data, allowing you to build RAG applications that can retrieve information from databases.
 
 ```python
-#The database initialized with the data first
+#The database library used in this example is SQLAlchemy
 sql_database = SQLDatabase(engine, include_tables=["books"])
 query_engine = NLSQLTableQueryEngine(
     sql_database=sql_database,
