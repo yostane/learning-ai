@@ -8,7 +8,7 @@
       "email": "ibrahim.gharbi@worldline.com"
     }
   ],
-  "repository": "https://github.com/gbrah/learning-ai",
+  "repository": "https://github.com/worldline/learning-ai",
   "scripts": {
     "dev": "vuepress dev src -p 8081 --debug",
     "build": "vuepress build src"
