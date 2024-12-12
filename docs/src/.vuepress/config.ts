@@ -5,6 +5,7 @@ import { pwaPlugin } from "@vuepress/plugin-pwa";
 import { seoPlugin } from "@vuepress/plugin-seo";
 import { defineUserConfig } from "vuepress";
 import { viteBundler } from '@vuepress/bundler-vite'
+//import { webpackBundler } from '@vuepress/bundler-webpack'
 
 export default defineUserConfig({
   
@@ -39,9 +40,14 @@ export default defineUserConfig({
     vuePluginOptions: {},
   }),
 
+  /*bundler: webpackBundler({
+    webpackOptions: {},
+    vuePluginOptions: {},
+  }),*/
+
   plugins: [
     seoPlugin({
-      hostname: "https://worldline.github.io/worldline/learning-ai",
+      hostname: "https://worldline.github.io/learning-ai",
     }),
   ],
 });
