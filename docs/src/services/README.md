@@ -314,16 +314,57 @@ The current weather in Paris is: overcast clouds with a temperature of 6.63°C.
 [Google Collab notebook](https://colab.research.google.com/drive/16B84XU5dl2UR5XZkRtnh3MWUK0K5ZBd_?usp=sharing)
 :::
 
-##  RAG for services  (llama-index)
+##  [RAG for services  (llama-index)](https://docs.llamaindex.ai/en/stable/use_cases/q_and_a/)
 
-llama-index is a powerful tool for building and deploying RAG (Retrieval Augmented Generation) applications. It provides a simple and efficient way to integrate LLMs into your applications, allowing you to retrieve relevant information from a large knowledge base and use it to generate responses.
+**llama-index** is a powerful tool for building and deploying RAG (Retrieval Augmented Generation) applications. It provides a simple and efficient way to integrate LLMs into your applications, allowing you to retrieve relevant information from a large knowledge base and use it to generate responses. RAG is a technique that leverages the power of LLMs to augment human-generated content.
 
-RAG is a technique that leverages the power of LLMs to augment human-generated content.
+### RAG over Unstructured Documents 
+
+
+
+### Question Answering (QA) over Structured Data
+
+
+
+
 
 ### 🧪 Exercises
 
-::: warning TODO
+#### Querying SQL Databases with Natural Language
 
+**Objectives:** This exercise demonstrates querying a SQL database using natural language. You will learn how to connect an LLM to a database using LlamaIndex and then use natural language queries to retrieve information. This approach simplifies data interaction and allows for intuitive data exploration.
+
+This exercise uses LlamaIndex to connect an LLM (MistralAI) to a SQL database managed by SQLAlchemy. Hugging Face Transformers is used for embedding generation, enabling semantic understanding of data.
+
+**Expected Shell Output:**
+```bash
+[
+    {
+        "language_name": "Python",
+        "creator": "Guido van Rossum",
+        "year_created": 1991
+    },
+    {
+        "language_name": "JavaScript",
+        "creator": "Brendan Eich",
+        "year_created": 1995
+    },
+    {
+        "language_name": "Java",
+        "creator": "James Gosling",
+        "year_created": 1995
+    },
+    {
+        "language_name": "C++",
+        "creator": "Bjarne Stroustrup",
+        "year_created": 1985
+    }
+]
+Guido van Rossum created Python in 1991.
+```
+
+:::tip Solution
+[Google Collab notebook](https://colab.research.google.com/drive/1osoFUAxRbZayftaTlCtJIqlWlj_0c3sQ?usp=sharing)
 :::
 
 ## CloudAI with GCP

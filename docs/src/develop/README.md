@@ -21,11 +21,11 @@ There is also other producs indegrated to IDEs such as :
 Copilot Chat is a chat interface that allows you to ask questions and get suggestions for code improvements.
 
 it's available on : 
-- JetBrains IDEs
-- Visual Studio
-- Visual Studio Code
-- In Github mobile App
-- Web version in github.com (Preview)
+- [JetBrains IDEs](https://plugins.jetbrains.com/plugin/17718-github-copilot)
+- [Visual Studio](https://visualstudio.microsoft.com/fr/github-copilot/)
+- [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat)
+- In [Github mobile App](https://github.com/mobile)
+- Web version in [github.com (Preview)](https://docs.github.com/fr/enterprise-cloud@latest/copilot/using-github-copilot/asking-github-copilot-questions-in-github)
 
 It is a similar approach to chat GPT prompting optimised for the developper experience.
 
@@ -37,7 +37,7 @@ You can use it in the terminal with the following command:
 gh auth login
 gh extension install github.copilot
 gh copilot explain "traceroute github.com"
-````
+```
 ::: warning
 Github CLI is not supported yet with our Worldline account, so you need to use the web version with the link here
 :::
@@ -46,14 +46,62 @@ Github CLI is not supported yet with our Worldline account, so you need to use t
 
 #### Completion
 ![copilot-assistance](../assets/images/copilot_completion.gif)
+
 #### Generation
 ![copilot-completion](../assets/images/copilot_generation.gif)
 
 #### Assistance
-#### Refactoring
+![copilot-assistance](../assets/images/copilot_assistance.gif)
+![copilot-assistance2](../assets/images/copilot_assistance2.gif)
+
 #### Test generation
+![copilot-test](../assets/images/copilot_testing.gif)
+
+#### Refactoring
 #### Documentation
 #### Architecture diagram
+
+[Mermaid diagrams](https://mermaid.live/) is a great tool to create diagrams in markdown files online. With copilot you can generate a diagram based on the code you write or chat with copilot to generate the diagram.
+
+``` text
+Generate a mermaid architecture diagram for a simple retail app with product catalog, product details , buying tunnel , loyalty. Be detailed. I want to make this app with express node JS Rest API server, please provide the diagram for the server side. Suggest technical stack on the diagram , name the component variables. Parentheses are not supported by mermaid.
+```
+
+```mermaid
+graph TD;
+    A[Client Application] -->|HTTP Requests| B[Express.js REST API Server]
+    B -->|Fetch Products| C[Product Controller - productController]
+    B -->|Fetch Product Details| D[Product Details Controller - productDetailsController]
+    B -->|Handle Cart Operations| E[Cart Controller - cartController]
+    B -->|Process Orders| F[Order Controller - orderController]
+    B -->|Manage User Accounts| G[User Controller - userController]
+    B -->|Handle Loyalty Program| H[Loyalty Controller - loyaltyController]
+    
+    subgraph Database
+        I[MongoDB - mongoose]
+    end
+    
+    subgraph Middleware
+        J[Authentication Middleware - passport]
+        K[Error Handling Middleware - errorHandler]
+        L[Logging Middleware - morgan]
+    end
+    
+    B -->|Connects to| I
+    B -->|Uses| J
+    B -->|Uses| K
+    B -->|Uses| L
+    
+    C -->|CRUD Operations| I
+    D -->|CRUD Operations| I
+    E -->|CRUD Operations| I
+    F -->|CRUD Operations| I
+    G -->|CRUD Operations| I
+    H -->|CRUD Operations| I
+```
+
+![copilot-diagram](../assets/images/copilot_diagram.png)
+
 
 ## 🧪 Exercise
 
@@ -80,7 +128,7 @@ And it enables this through a combination of three tightly-integrated components
 :::
 
 ## 📖 Further readings
-*[Worldline AI coding assistant](https://confluence.worldline-solutions.com/display/AICA/AI+Coding+Assistants+Home)
+* [Worldline AI coding assistant](https://confluence.worldline-solutions.com/display/AICA/AI+Coding+Assistants+Home)
 * [Worldline Data platform](https://confluence.worldline-solutions.com/display/DPTECHNO/Data+Platform)
 * [Copilot trust Center](https://resources.github.com/copilot-trust-center/)
 * [Chat with your IDE](https://docs.github.com/en/copilot/github-copilot-chat/using-github-copilot-chat-in-your-ide)
