@@ -344,7 +344,10 @@ The current weather in Paris is: overcast clouds with a temperature of 6.63°C.
 Unstructured documents are a common source of information for RAG applications. These documents can be in various formats, such as text, PDF, HTML, or images. LlamaIndex provides tools for indexing and querying unstructured documents, enabling you to build powerful RAG applications that can retrieve information from a large corpus of documents.
 
 ```python
-
+documents = SimpleDirectoryReader(input_files=[fn]).load_data()
+index = SummaryIndex.from_documents(documents, settings=settings)
+query_engine = index.as_query_engine(response_mode="tree_summarize", llm=llm)
+response = query_engine.query("<your_query_here>")
 ```
 
 
@@ -353,7 +356,16 @@ Unstructured documents are a common source of information for RAG applications. 
 Structured Data is another common source of information for RAG applications. This data is typically stored in databases or spreadsheets and can be queried using SQL or other query languages. LlamaIndex provides tools for connecting LLMs to databases and querying structured data, allowing you to build RAG applications that can retrieve information from databases.
 
 ```python
+#The database initialized with the data first
+sql_database = SQLDatabase(engine, include_tables=["books"])
+query_engine = NLSQLTableQueryEngine(
+    sql_database=sql_database,
+    tables=["books"],
+    llm=llm,
+    embed_model=embed_model,
+)
 
+query_engine.query("Who wrote 'To Kill a Mockingbird'?")
 ```
 
 ### 🧪 Exercises
