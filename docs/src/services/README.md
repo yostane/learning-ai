@@ -7,6 +7,27 @@ You can use [Google collab](https://colab.research.google.com/) for a simple to 
 
 A notebook is a document that contains live code, equations, visualizations, and narrative text. You can use Colab to create, share, and collaborate on Jupyter notebooks with others. 
 
+::: tip User interraction with collab
+
+You can store your API keysafely in the userdata of your colab environment.
+Also you can upload files to your colab environment as follows:
+
+```python
+
+from google.colab import files
+from google.colab import userdata  # For retrieving API keys
+
+# 1. Upload the file to your current colab environment ( a upload button will appear at the execution of the code)
+uploaded = files.upload()
+for fn in uploaded.keys():
+    print('User uploaded file "{name}" with length {length} bytes'.format(
+        name=fn, length=len(uploaded[fn])))
+
+# get the API key from colab userdata ( left panel of colla, picto with the key)
+api_key=userdata.get('API_KEY')
+
+```
+:::
 
 ### Langchain
 Langchain is a framework for building applications powered by language models (LLMs) like OpenAI's GPT-3. It provides a set of tools and utilities for working with LLMs, including prompt engineering, chain of thought, and memory management. Langchain is designed to be modular and extensible, allowing developers to easily integrate with different LLMs and other AI services.
@@ -314,27 +335,58 @@ The current weather in Paris is: overcast clouds with a temperature of 6.63°C.
 [Google Collab notebook](https://colab.research.google.com/drive/16B84XU5dl2UR5XZkRtnh3MWUK0K5ZBd_?usp=sharing)
 :::
 
-##  [RAG for services  (llama-index)](https://docs.llamaindex.ai/en/stable/use_cases/q_and_a/)
+## RAG for services  (llama-index)
 
-**llama-index** is a powerful tool for building and deploying RAG (Retrieval Augmented Generation) applications. It provides a simple and efficient way to integrate LLMs into your applications, allowing you to retrieve relevant information from a large knowledge base and use it to generate responses. RAG is a technique that leverages the power of LLMs to augment human-generated content.
+[**llama-index**](https://docs.llamaindex.ai/en/stable/use_cases/q_and_a/) is a powerful tool for building and deploying RAG (Retrieval Augmented Generation) applications. It provides a simple and efficient way to integrate LLMs into your applications, allowing you to retrieve relevant information from a large knowledge base and use it to generate responses. RAG is a technique that leverages the power of LLMs to augment human-generated content.
 
-### RAG over Unstructured Documents 
+### RAG over Unstructured Documents
 
+Unstructured documents are a common source of information for RAG applications. These documents can be in various formats, such as text, PDF, HTML, or images. LlamaIndex provides tools for indexing and querying unstructured documents, enabling you to build powerful RAG applications that can retrieve information from a large corpus of documents.
+
+```python
+
+```
 
 
 ### Question Answering (QA) over Structured Data
 
+Structured Data is another common source of information for RAG applications. This data is typically stored in databases or spreadsheets and can be queried using SQL or other query languages. LlamaIndex provides tools for connecting LLMs to databases and querying structured data, allowing you to build RAG applications that can retrieve information from databases.
 
+```python
 
-
+```
 
 ### 🧪 Exercises
 
+
+#### Querying on Unstructured Documents
+
+Create a Python application that provide a txt document containings a list of application comments and make sentiment analysis on it with `llama-index`.
+
+Your customer review txt file :
+```text
+Review 1: I was very disappointed with the product. It did not meet my expectations.
+Review 2: The service was excellent! I highly recommend this company.
+Review 3: I had a terrible experience. The product was faulty, and the customer support was unhelpful.
+Review 4: I am extremely satisfied with my purchase. The quality is outstanding.
+```
+
+**Expected Shell Output:**
+
+```bash
+Saving customer_reviews.txt to customer_reviews (4).txt
+User uploaded file "customer_reviews (4).txt" with length 338 bytes
+The customers' experiences with the company and its products vary. Some have had positive experiences, such as excellent service and high-quality products, while others have encountered issues with faulty products and unhelpful customer support.
+```
+
+::: details Solution
+[Google Collab notebook](https://colab.research.google.com/drive/1HRVqcYEl2RLQDQ8l4NoGcdxiqU-6CgJa?usp=sharing)
+:::
+
 #### Querying SQL Databases with Natural Language
 
-**Objectives:** This exercise demonstrates querying a SQL database using natural language. You will learn how to connect an LLM to a database using LlamaIndex and then use natural language queries to retrieve information. This approach simplifies data interaction and allows for intuitive data exploration.
-
-This exercise uses LlamaIndex to connect an LLM (MistralAI) to a SQL database managed by SQLAlchemy. Hugging Face Transformers is used for embedding generation, enabling semantic understanding of data.
+Create a Python application that initializes a list of languages and their creators with `sqlalchemy` and requests the LLM to retrieve the creators of a language. 
+The LLM should be able to understand the context and retrieve the relevant information from the database.
 
 **Expected Shell Output:**
 ```bash

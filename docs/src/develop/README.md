@@ -47,7 +47,7 @@ Github CLI is not supported yet with our Worldline account, so you need to use t
 #### Completion
 ![copilot-assistance](../assets/images/copilot_completion.gif)
 
-#### Generation
+#### Generation & Refactoring
 ![copilot-completion](../assets/images/copilot_generation.gif)
 
 #### Assistance
@@ -57,8 +57,24 @@ Github CLI is not supported yet with our Worldline account, so you need to use t
 #### Test generation
 ![copilot-test](../assets/images/copilot_testing.gif)
 
-#### Refactoring
+
+::: tip Sortcut usage of Copilot chat
+
+You can also use the chat interface to ask questions with shortcuts :
+- `/ask`
+-  `/explain`
+- `/generate` 
+- `/refactor`
+- `/test`
+- `/setupTest`
+- ...
+
+![copilot-test-with-chat](../assets/images/copilot_test.gif)
+:::
+
 #### Documentation
+
+
 #### Architecture diagram
 
 [Mermaid diagrams](https://mermaid.live/) is a great tool to create diagrams in markdown files online. With copilot you can generate a diagram based on the code you write or chat with copilot to generate the diagram.
