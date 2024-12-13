@@ -1,6 +1,7 @@
-import { viteBundler } from '@vuepress/bundler-vite'
 import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress";
+import { viteBundler } from '@vuepress/bundler-vite'
+
 
 //import { searchPlugin } from "@vuepress/plugin-search";
 //import { nprogressPlugin } from "@vuepress/plugin-nprogress";
@@ -25,6 +26,7 @@ export default defineUserConfig({
   theme: defaultTheme({
         logo: 'logo_worldline.png',
         repo: 'https://github.com/worldline/learning-ai',
+        repoLabel: "⭐ Contribute!",
 
         sidebar: [
           { text: 'Home', link: '/' },
