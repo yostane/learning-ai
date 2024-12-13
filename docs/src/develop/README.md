@@ -87,6 +87,38 @@ Generate a mermaid architecture diagram for a simple retail app with product cat
 
 ![copilot-diagram](../assets/images/copilot_diagram.png)
 
+```sh
+graph TD;
+    A[Client Application] -->|HTTP Requests| B[Express.js REST API Server]
+    B -->|Fetch Products| C[Product Controller - productController]
+    B -->|Fetch Product Details| D[Product Details Controller - productDetailsController]
+    B -->|Handle Cart Operations| E[Cart Controller - cartController]
+    B -->|Process Orders| F[Order Controller - orderController]
+    B -->|Manage User Accounts| G[User Controller - userController]
+    B -->|Handle Loyalty Program| H[Loyalty Controller - loyaltyController]
+    
+    subgraph Database
+        I[MongoDB - mongoose]
+    end
+    
+    subgraph Middleware
+        J[Authentication Middleware - passport]
+        K[Error Handling Middleware - errorHandler]
+        L[Logging Middleware - morgan]
+    end
+    
+    B -->|Connects to| I
+    B -->|Uses| J
+    B -->|Uses| K
+    B -->|Uses| L
+    
+    C -->|CRUD Operations| I
+    D -->|CRUD Operations| I
+    E -->|CRUD Operations| I
+    F -->|CRUD Operations| I
+    G -->|CRUD Operations| I
+    H -->|CRUD Operations| I
+```
 
 ## 🧪 Exercise
 

@@ -31,8 +31,7 @@ export default defineUserConfig({
           "/use/",
           "/llm/",
           "/offline/",
-          "/develop/",
-          "/servicesai/"
+          "/develop/"
         ], 
   }),
   plugins: [
