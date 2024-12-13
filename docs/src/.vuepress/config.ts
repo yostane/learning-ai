@@ -1,8 +1,6 @@
 import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress";
 import { viteBundler } from '@vuepress/bundler-vite'
-
-
 //import { searchPlugin } from "@vuepress/plugin-search";
 //import { nprogressPlugin } from "@vuepress/plugin-nprogress";
 //import { pwaPlugin } from "@vuepress/plugin-pwa";
