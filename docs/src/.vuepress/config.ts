@@ -30,8 +30,7 @@ export default defineUserConfig({
           "/overview/",
           "/use/",
           "/llm/",
-          "/offline/",
-          "/develop/"
+          "/offline/"
         ], 
   }),
   plugins: [
