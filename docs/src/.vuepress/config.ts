@@ -1,8 +1,8 @@
 import { defaultTheme } from "@vuepress/theme-default";
-import { searchPlugin } from "@vuepress/plugin-search";
-import { nprogressPlugin } from "@vuepress/plugin-nprogress";
-import { pwaPlugin } from "@vuepress/plugin-pwa";
-import { seoPlugin } from "@vuepress/plugin-seo";
+//import { searchPlugin } from "@vuepress/plugin-search";
+//import { nprogressPlugin } from "@vuepress/plugin-nprogress";
+//import { pwaPlugin } from "@vuepress/plugin-pwa";
+//import { seoPlugin } from "@vuepress/plugin-seo";
 import { defineUserConfig } from "vuepress";
 import { viteBundler } from '@vuepress/bundler-vite'
 //import { webpackBundler } from '@vuepress/bundler-webpack'
@@ -30,21 +30,12 @@ export default defineUserConfig({
           "/overview/",
           "/use/",
           "/llm/",
-          "/offline/"
+          "/offline/",
+          "/develop/",
+          "/servicesai/"
         ], 
   }),
-  plugins: [
-    seoPlugin({
-      hostname: "https://worldline.github.io/learning-ai",
-    }),
-    searchPlugin({
-      // options du plugin de recherche
-    }),
-    nprogressPlugin(),
-    pwaPlugin({
-      // options du plugin PWA
-    }),
-  ],
+
   /*bundler: webpackBundler({
     webpackOptions: {},
     vuePluginOptions: {},
