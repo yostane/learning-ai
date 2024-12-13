@@ -35,26 +35,18 @@ export default defineUserConfig({
           "/servicesai/"
         ], 
   }),
-  bundler: viteBundler({
-    viteOptions: {},
-    vuePluginOptions: {},
-  }),
-
+  plugins: [
+    seoPlugin({
+      hostname: "https://worldline.github.io/learning-ai",
+    }),
+  ],
   /*bundler: webpackBundler({
     webpackOptions: {},
     vuePluginOptions: {},
   }),*/
 
-  plugins: [
-    seoPlugin({
-      hostname: "https://worldline.github.io/learning-ai",
-    }),
-    searchPlugin({
-      // options du plugin de recherche
-    }),
-    nprogressPlugin(),
-    pwaPlugin({
-      // options du plugin PWA
-    }),
-  ],
+  bundler: viteBundler({
+    viteOptions: {},
+    vuePluginOptions: {},
+  }),
 });
