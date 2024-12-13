@@ -14,15 +14,12 @@
     "build": "vuepress build src"
   },
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "@types/node": "^22.9.0",
     "@vuepress/bundler-vite": "^2.0.0-rc.18",
     "@vuepress/client": "^2.0.0-rc.18",
     "@vuepress/plugin-search": "^2.0.0-rc.18",
     "@vuepress/theme-default": "^2.0.0-rc.18",
     "sass-embedded": "^1.81.0"
-  },
-  "dependencies": {
-    "vite-plugin-vue-devtools": "^7.6.8"
   }
 }
