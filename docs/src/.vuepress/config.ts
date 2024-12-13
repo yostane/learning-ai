@@ -39,6 +39,13 @@ export default defineUserConfig({
     seoPlugin({
       hostname: "https://worldline.github.io/learning-ai",
     }),
+    searchPlugin({
+      // options du plugin de recherche
+    }),
+    nprogressPlugin(),
+    pwaPlugin({
+      // options du plugin PWA
+    }),
   ],
   /*bundler: webpackBundler({
     webpackOptions: {},
